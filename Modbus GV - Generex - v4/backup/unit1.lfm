@@ -1,18 +1,18 @@
 object Form1: TForm1
-  Left = 661
+  Left = 365
   Height = 484
-  Top = 168
-  Width = 602
+  Top = 155
+  Width = 743
   BorderStyle = bsSingle
   Caption = 'Form1'
   ClientHeight = 484
-  ClientWidth = 602
+  ClientWidth = 743
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   LCLVersion = '2.0.2.0'
   object Edit2: TEdit
     Left = 0
-    Height = 23
+    Height = 27
     Top = 56
     Width = 94
     TabOrder = 0
@@ -20,7 +20,7 @@ object Form1: TForm1
   end
   object Edit3: TEdit
     Left = 104
-    Height = 23
+    Height = 27
     Top = 56
     Width = 94
     NumbersOnly = True
@@ -29,7 +29,7 @@ object Form1: TForm1
   end
   object Edit4: TEdit
     Left = 208
-    Height = 23
+    Height = 27
     Top = 56
     Width = 94
     NumbersOnly = True
@@ -38,7 +38,7 @@ object Form1: TForm1
   end
   object Edit5: TEdit
     Left = 0
-    Height = 23
+    Height = 27
     Top = 84
     Width = 94
     TabOrder = 3
@@ -46,7 +46,7 @@ object Form1: TForm1
   end
   object Edit6: TEdit
     Left = 104
-    Height = 23
+    Height = 27
     Top = 84
     Width = 94
     NumbersOnly = True
@@ -55,7 +55,7 @@ object Form1: TForm1
   end
   object Edit7: TEdit
     Left = 208
-    Height = 23
+    Height = 27
     Top = 84
     Width = 94
     NumbersOnly = True
@@ -64,39 +64,39 @@ object Form1: TForm1
   end
   object Edit8: TEdit
     Left = 325
-    Height = 23
+    Height = 27
     Top = 264
-    Width = 120
+    Width = 169
     TabOrder = 6
     Text = 'Edit8'
   end
   object Edit9: TEdit
     Left = 325
-    Height = 23
+    Height = 27
     Top = 288
-    Width = 118
+    Width = 169
     TabOrder = 7
     Text = 'Edit9'
   end
   object Label1: TLabel
     Left = 232
-    Height = 15
+    Height = 17
     Top = 272
-    Width = 85
+    Width = 102
     Caption = 'Modbus Update'
     ParentColor = False
   end
   object Label2: TLabel
     Left = 232
-    Height = 15
+    Height = 17
     Top = 296
-    Width = 60
+    Width = 71
     Caption = 'WriteToFile'
     ParentColor = False
   end
   object Edit10: TEdit
     Left = 352
-    Height = 23
+    Height = 27
     Top = 56
     Width = 75
     TabOrder = 8
@@ -122,7 +122,7 @@ object Form1: TForm1
   end
   object Edit12: TEdit
     Left = 440
-    Height = 23
+    Height = 27
     Top = 56
     Width = 48
     NumbersOnly = True
@@ -130,16 +130,16 @@ object Form1: TForm1
     Text = '502'
   end
   object Label3: TLabel
-    Left = 504
-    Height = 15
-    Top = 272
-    Width = 34
+    Left = 592
+    Height = 17
+    Top = 264
+    Width = 43
     Caption = 'Label3'
     ParentColor = False
   end
   object Edit13: TEdit
-    Left = 488
-    Height = 23
+    Left = 529
+    Height = 27
     Top = 288
     Width = 48
     NumbersOnly = True
@@ -147,26 +147,26 @@ object Form1: TForm1
     Text = '20'
   end
   object Label4: TLabel
-    Left = 455
-    Height = 15
+    Left = 496
+    Height = 17
     Top = 296
-    Width = 28
+    Width = 37
     Caption = 'Every'
     ParentColor = False
   end
   object Label5: TLabel
-    Left = 536
-    Height = 15
+    Left = 577
+    Height = 17
     Top = 296
-    Width = 43
+    Width = 53
     Caption = 'seconds'
     ParentColor = False
   end
   object Label6: TLabel
-    Left = 448
-    Height = 15
-    Top = 272
-    Width = 43
+    Left = 529
+    Height = 17
+    Top = 264
+    Width = 58
     Caption = 'Rx Bytes'
     ParentColor = False
   end
@@ -174,7 +174,7 @@ object Form1: TForm1
     Left = 232
     Height = 23
     Top = 416
-    Width = 137
+    Width = 173
     CenturyFrom = 1941
     MaxDate = 2958465
     MinDate = -53780
@@ -197,17 +197,17 @@ object Form1: TForm1
   end
   object Edit14: TEdit
     Left = 352
-    Height = 23
+    Height = 27
     Top = 445
     Width = 225
     TabOrder = 14
     Text = 'Edit14'
   end
   object DateTimePicker2: TDateTimePicker
-    Left = 385
+    Left = 444
     Height = 23
-    Top = 416
-    Width = 137
+    Top = 417
+    Width = 173
     CenturyFrom = 1941
     MaxDate = 2958465
     MinDate = -53780
@@ -230,9 +230,9 @@ object Form1: TForm1
   end
   object Label7: TLabel
     Left = 331
-    Height = 25
+    Height = 30
     Top = 368
-    Width = 112
+    Width = 178
     Caption = 'Log Scheduler'
     Font.Color = clRed
     Font.Height = 25
@@ -240,19 +240,19 @@ object Form1: TForm1
     ParentFont = False
   end
   object Edit15: TEdit
-    Left = 528
-    Height = 23
-    Top = 416
+    Left = 632
+    Height = 27
+    Top = 412
     Width = 48
     NumbersOnly = True
     TabOrder = 16
     Text = '1'
   end
   object ToggleBox1: TToggleBox
-    Left = 232
+    Left = 216
     Height = 26
     Top = 445
-    Width = 112
+    Width = 128
     Caption = 'Enable Scheduler'
     Color = clRed
     TabOrder = 17
@@ -267,30 +267,30 @@ object Form1: TForm1
     TabOrder = 18
   end
   object Label8: TLabel
-    Left = 265
-    Height = 20
+    Left = 304
+    Height = 24
     Top = 392
-    Width = 31
+    Width = 49
     Caption = 'Start'
     Font.Height = 20
     ParentColor = False
     ParentFont = False
   end
   object Label9: TLabel
-    Left = 432
-    Height = 20
+    Left = 501
+    Height = 24
     Top = 392
-    Width = 31
+    Width = 46
     Caption = 'Stop'
     Font.Height = 20
     ParentColor = False
     ParentFont = False
   end
   object Label10: TLabel
-    Left = 528
-    Height = 20
+    Left = 616
+    Height = 24
     Top = 392
-    Width = 49
+    Width = 77
     Caption = 'Interval'
     Font.Height = 20
     ParentColor = False
@@ -317,16 +317,16 @@ object Form1: TForm1
   end
   object Edit11: TEdit
     Left = 325
-    Height = 23
+    Height = 27
     Top = 312
-    Width = 115
+    Width = 169
     NumbersOnly = True
     TabOrder = 21
     Text = 'Edit11'
   end
   object Edit16: TEdit
     Left = 512
-    Height = 23
+    Height = 27
     Top = 56
     Width = 37
     NumbersOnly = True
@@ -335,33 +335,33 @@ object Form1: TForm1
   end
   object Label11: TLabel
     Left = 512
-    Height = 15
+    Height = 17
     Top = 40
-    Width = 45
+    Width = 59
     Caption = 'Batteries'
     ParentColor = False
   end
   object Label12: TLabel
     Left = 444
-    Height = 15
+    Height = 17
     Top = 88
-    Width = 6
+    Width = 8
     Caption = '0'
     ParentColor = False
   end
   object Label13: TLabel
     Left = 448
-    Height = 15
+    Height = 17
     Top = 40
-    Width = 22
+    Width = 26
     Caption = 'Port'
     ParentColor = False
   end
   object Label14: TLabel
     Left = 368
-    Height = 15
+    Height = 17
     Top = 40
-    Width = 37
+    Width = 41
     Caption = 'TCP-IP'
     ParentColor = False
   end

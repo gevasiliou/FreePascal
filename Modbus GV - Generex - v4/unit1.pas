@@ -1,3 +1,21 @@
+{
+Resolving issues with bgrabitmap:
+Find the bellow lines in file
+./PascalSCADA_0.7.5/bgrabitmap/bgragtkbitmap.pas (should be line 67)
+
+{$IFDEF LCLgtk2}
+type TGtkDeviceContext = TGtk2DeviceContext;
+{$ENDIF}
+
+and change them with these:
+{$IFDEF LCLgtk2}
+{$MACRO ON}
+//{$if (lcl_major <> 1) or (lcl_minor <> 0)}
+{$define type TGtkDeviceContext = TGtk2DeviceContext;}
+//{$endif}
+{$ENDIF}
+source: https://forum.lazarus.freepascal.org/index.php/topic,18618.0.html
+}
 unit Unit1;
 
 {$mode objfpc}{$H+}
@@ -168,12 +186,13 @@ begin
      Label12.Caption:=IntToStr(ConnectTimes);ConnectTimes:=ConnectTimes+1;
 end;
 
-
 procedure TForm1.FormCreate(Sender: TObject);
 begin
      ii := 1;
 //     system.Assign(vf,'C:\Users\ge.vasiliou\Desktop\gt.csv');
-     system.Assign(vf,'C:\gt.csv');
+//     system.Assign(vf,'C:\gt.csv');
+     system.Assign(vf,'gt.csv');
+
 //     system.Rewrite(vf);
      DateTimePicker1.DateTime:=Now;
      DateTimePicker2.DateTime:=Now;
@@ -268,7 +287,7 @@ begin
      if TimerEnd then
           begin
                Edit9.Text := d;
-               system.Append(vf);
+               if FileExists('gt.csv') then system.Append(vf) else system.ReWrite(vf);
                fopened := True;
 //               writeln(vf, d, ';', b1, ';', b2,';',b3);
                writeln(vf, writetofile);

@@ -1,3 +1,19 @@
+{
+Resolving issues with bgrabitmap:
+Find the bellow lines
+{$IFDEF LCLgtk2}
+type TGtkDeviceContext = TGtk2DeviceContext;
+{$ENDIF}
+
+and change them with these:
+{$IFDEF LCLgtk2}
+{$MACRO ON}
+//{$if (lcl_major <> 1) or (lcl_minor <> 0)}
+{$define type TGtkDeviceContext = TGtk2DeviceContext;}
+//{$endif}
+{$ENDIF}
+source: https://forum.lazarus.freepascal.org/index.php/topic,18618.0.html
+}
 unit Unit1;
 
 {$mode objfpc}{$H+}
@@ -140,7 +156,7 @@ begin
 
      if ConnectTimes=1 then PLCBlock1.Size:=NumberOfBatts*5;      //Initial Run
 
-     //if PLCBlock1.Size <= NumberOfBatts*5 then
+     if PLCBlock1.Size <= NumberOfBatts*5 then
           // If we need to read less data than before, then we read all the data based
           // on the previous value of block size but display only the required data.
           // This is a workaround since we can not delete an existed block element.
@@ -148,9 +164,8 @@ begin
           // and rebuild it based on the new NumberOfBatts (smaller than before).
           // One possible solution could be to loop on the previous big array and perform FreeAndNil(object).
           // FreeAndNil is better than just free since it ensures that object will be unassigned (while just onject.free does not unassign object
-
-     if ConnectTimes > 1 then for i:=1 To PLCBlock1.Size do FreeAndNil(PLCBE[i]);
-          //begin
+          // if ConnectTimes > 1 then for i:=1 To PLCBlock1.Size do FreeAndNil(PLCBE[i]);
+          begin
                 PLCBlock1.Size:=NumberOfBatts*5;       //Generex Holds 5 registers for each battery, starting from 1060
                 count:=1;
                 while count<=PLCBlock1.Size+1 do
@@ -161,7 +176,7 @@ begin
                      PLCBE[count].PLCBlock:=PLCBlock1;
                      count:=count+1;
                    end;
-          //end;
+          end;
      TCP_UDPPort1.Host := Edit10.Text;                         //read the host
      TCP_UDPPort1.Port := StrToInt(Edit12.Text);               //read the port
      TCP_UDPPort1.Active := True;                              // Enable connection with above host/port
@@ -169,12 +184,13 @@ begin
      Label12.Caption:=IntToStr(ConnectTimes);ConnectTimes:=ConnectTimes+1;
 end;
 
-
 procedure TForm1.FormCreate(Sender: TObject);
 begin
      ii := 1;
 //     system.Assign(vf,'C:\Users\ge.vasiliou\Desktop\gt.csv');
-     system.Assign(vf,'C:\gt.csv');
+//     system.Assign(vf,'C:\gt.csv');
+     system.Assign(vf,'gt.csv');
+
 //     system.Rewrite(vf);
      DateTimePicker1.DateTime:=Now;
      DateTimePicker2.DateTime:=Now;
@@ -269,7 +285,7 @@ begin
      if TimerEnd then
           begin
                Edit9.Text := d;
-               system.Append(vf);
+               if FileExists('gt.csv') then system.Append(vf) else system.ReWrite(vf);
                fopened := True;
 //               writeln(vf, d, ';', b1, ';', b2,';',b3);
                writeln(vf, writetofile);
