@@ -1,12 +1,12 @@
 object Form1: TForm1
-  Left = 365
+  Left = 363
   Height = 484
   Top = 155
-  Width = 904
+  Width = 997
   BorderStyle = bsSingle
   Caption = 'Form1'
   ClientHeight = 484
-  ClientWidth = 904
+  ClientWidth = 997
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   LCLVersion = '2.0.2.0'

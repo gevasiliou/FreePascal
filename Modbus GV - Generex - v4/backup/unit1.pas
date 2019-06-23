@@ -154,7 +154,7 @@ begin
      //Edit16.Enabled:=False;
 
      NumberOfBatts:=StrToInt(Edit16.Text);
-     StringGrid1.RowCount:=NumberOfBatts+1; //RowCount value includes also the header row
+     StringGrid1.RowCount:=NumberOfBatts+2; //RowCount value includes also the header row and the sum row
 
      if ConnectTimes=1 then PLCBlock1.Size:=NumberOfBatts*5;      //Initial Run
 
@@ -218,6 +218,7 @@ procedure TForm1.M1VoltsUpdate(Sender: TObject);
 var
    b1,t1,b2,t2,b3,t3,d,writetofile: String;
    i,ind: Integer;
+   StringVoltage: Double;
 
 begin
 //http://wiki.lazarus.freepascal.org/TStringGrid
@@ -271,17 +272,30 @@ begin
           StringGrid1.Cells[1,2]:=b2;StringGrid1.Cells[2,2]:=t2;
           StringGrid1.Cells[1,3]:=b3;StringGrid1.Cells[2,3]:=t3;
           }
+          StringVoltage:=0;
           i:=1;ind:=1;writetofile:=d;
           while i<=NumberOfBatts do
           begin
-               StringGrid1.Cells[0,i]:=IntToStr(i);
-               StringGrid1.Cells[1,i]:=FloatToStr((PLCBE[ind].Value-78)/2);StringGrid1.Cells[2,i]:=FloatToStr(PLCBE[ind+1].Value/1000);
-          //We can use a string in order to concatenate all the values in one row like this:
+               StringGrid1.Cells[0,i]:=IntToStr(i);                         // battery id - column1
+               StringGrid1.Cells[1,i]:=FloatToStr((PLCBE[ind].Value-78)/2); //temperature - column2
+
+               if PLCBE[ind+1].Value = 55537 then StringGrid1.Cells[2,i]:='N/A'
+               else
+                 begin
+                   StringGrid1.Cells[2,i]:=FloatToStr(PLCBE[ind+1].Value/1000); //voltage - column3
+                   StringVoltage:=StringVoltage+PLCBE[ind+1].Value/1000;
+                 end;
+               //We can use a string in order to concatenate all the values in one row like this:
                //Edit11.Text:=DateTimeToStr(PLCBlock1.ValueTimestamp);
                writetofile:=Concat(writetofile,';',FloatToStr(PLCBE[ind+1].Value/1000));
                //Edit11.Text:=writetofile;
-               i:=i+1;ind:=ind+5;
+               i:=i+1;
+               ind:=ind+5;  //remember Generex holds 5 registers per battery, starting from Temp,then Volts, etc
           end;
+          StringGrid1.Cells[0,i]:='Total';
+          //StringGrid1.Cells[1,i]:=FloatToStr((PLCBE[ind].Value-78)/2); //temperature - column2
+          StringGrid1.Cells[2,i]:=FloatToStr(StringVoltage);
+          writetofile:=Concat(writetofile,';',FloatToStr(StringVoltage));
 
 
      if TimerEnd then
