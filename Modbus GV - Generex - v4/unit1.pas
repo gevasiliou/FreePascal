@@ -287,7 +287,16 @@ begin
      if TimerEnd then
           begin
                Edit9.Text := d;
-               if FileExists('gt.csv') then system.Append(vf) else system.ReWrite(vf);
+               if FileExists('gt.csv') then
+                    begin
+                         Edit11.Text:='Existing file gt.csv';
+                         system.Append(vf);
+                    end
+                    else
+                      begin
+                         Edit11.Text:='New file gt.csv';
+                         system.ReWrite(vf);
+                      end;
                fopened := True;
 //               writeln(vf, d, ';', b1, ';', b2,';',b3);
                writeln(vf, writetofile);

@@ -2,11 +2,11 @@ object Form1: TForm1
   Left = 365
   Height = 484
   Top = 155
-  Width = 743
+  Width = 904
   BorderStyle = bsSingle
   Caption = 'Form1'
   ClientHeight = 484
-  ClientWidth = 743
+  ClientWidth = 904
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   LCLVersion = '2.0.2.0'
@@ -63,33 +63,33 @@ object Form1: TForm1
     Text = 'Edit7'
   end
   object Edit8: TEdit
-    Left = 325
+    Left = 357
     Height = 27
-    Top = 264
+    Top = 256
     Width = 169
     TabOrder = 6
     Text = 'Edit8'
   end
   object Edit9: TEdit
-    Left = 325
+    Left = 357
     Height = 27
-    Top = 288
+    Top = 280
     Width = 169
     TabOrder = 7
     Text = 'Edit9'
   end
   object Label1: TLabel
-    Left = 232
+    Left = 264
     Height = 17
-    Top = 272
+    Top = 264
     Width = 102
     Caption = 'Modbus Update'
     ParentColor = False
   end
   object Label2: TLabel
-    Left = 232
+    Left = 264
     Height = 17
-    Top = 296
+    Top = 288
     Width = 71
     Caption = 'WriteToFile'
     ParentColor = False
@@ -130,48 +130,48 @@ object Form1: TForm1
     Text = '502'
   end
   object Label3: TLabel
-    Left = 592
+    Left = 624
     Height = 17
-    Top = 264
+    Top = 256
     Width = 43
     Caption = 'Label3'
     ParentColor = False
   end
   object Edit13: TEdit
-    Left = 529
+    Left = 561
     Height = 27
-    Top = 288
+    Top = 280
     Width = 48
     NumbersOnly = True
     TabOrder = 12
     Text = '20'
   end
   object Label4: TLabel
-    Left = 496
+    Left = 528
     Height = 17
-    Top = 296
+    Top = 288
     Width = 37
     Caption = 'Every'
     ParentColor = False
   end
   object Label5: TLabel
-    Left = 577
+    Left = 609
     Height = 17
-    Top = 296
+    Top = 288
     Width = 53
     Caption = 'seconds'
     ParentColor = False
   end
   object Label6: TLabel
-    Left = 529
+    Left = 561
     Height = 17
-    Top = 264
+    Top = 256
     Width = 58
     Caption = 'Rx Bytes'
     ParentColor = False
   end
   object DateTimePicker1: TDateTimePicker
-    Left = 232
+    Left = 328
     Height = 23
     Top = 416
     Width = 173
@@ -196,7 +196,7 @@ object Form1: TForm1
     MonthNames = 'Long'
   end
   object Edit14: TEdit
-    Left = 352
+    Left = 448
     Height = 27
     Top = 445
     Width = 225
@@ -204,7 +204,7 @@ object Form1: TForm1
     Text = 'Edit14'
   end
   object DateTimePicker2: TDateTimePicker
-    Left = 444
+    Left = 540
     Height = 23
     Top = 417
     Width = 173
@@ -229,7 +229,7 @@ object Form1: TForm1
     MonthNames = 'Long'
   end
   object Label7: TLabel
-    Left = 331
+    Left = 465
     Height = 30
     Top = 368
     Width = 178
@@ -240,7 +240,7 @@ object Form1: TForm1
     ParentFont = False
   end
   object Edit15: TEdit
-    Left = 632
+    Left = 728
     Height = 27
     Top = 412
     Width = 48
@@ -249,7 +249,7 @@ object Form1: TForm1
     Text = '1'
   end
   object ToggleBox1: TToggleBox
-    Left = 216
+    Left = 312
     Height = 26
     Top = 445
     Width = 128
@@ -267,7 +267,7 @@ object Form1: TForm1
     TabOrder = 18
   end
   object Label8: TLabel
-    Left = 304
+    Left = 400
     Height = 24
     Top = 392
     Width = 49
@@ -277,7 +277,7 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label9: TLabel
-    Left = 501
+    Left = 597
     Height = 24
     Top = 392
     Width = 46
@@ -287,7 +287,7 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label10: TLabel
-    Left = 616
+    Left = 712
     Height = 24
     Top = 392
     Width = 77
@@ -297,9 +297,9 @@ object Form1: TForm1
     ParentFont = False
   end
   object Button4: TButton
-    Left = 136
+    Left = 232
     Height = 22
-    Top = 417
+    Top = 416
     Width = 92
     Caption = 'Test'
     OnClick = Button4Click
@@ -307,7 +307,7 @@ object Form1: TForm1
   end
   object StringGrid1: TStringGrid
     Left = 8
-    Height = 256
+    Height = 319
     Top = 152
     Width = 200
     ColCount = 3
@@ -316,9 +316,9 @@ object Form1: TForm1
     TabOrder = 20
   end
   object Edit11: TEdit
-    Left = 325
+    Left = 357
     Height = 27
-    Top = 312
+    Top = 304
     Width = 169
     NumbersOnly = True
     TabOrder = 21

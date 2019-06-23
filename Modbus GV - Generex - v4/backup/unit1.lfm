@@ -229,7 +229,7 @@ object Form1: TForm1
     MonthNames = 'Long'
   end
   object Label7: TLabel
-    Left = 331
+    Left = 369
     Height = 30
     Top = 368
     Width = 178
